@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg width='245.000000' height='245'>
+  <g>
+	<rect x='0' y='0' width='245.000000' height='245' style='fill: white;'/>
+	<line x1='222.500000' y1='122.500000' x2='153.401420' y2='217.605742' stroke='black' stroke-width='2' />
+	<line x1='222.500000' y1='122.500000' x2='153.402817' y2='27.394712' stroke='black' stroke-width='2' />
+	<circle cx='222.500000' cy='122.500000' r='20' stroke='black' stroke-width='2' fill='white' />
+	<text fill='black' font-family='sans-serif' font-size='20' x='222.500000' y='130.500000'
+	text-anchor='middle'>1</text>
+	<circle cx='153.401420' cy='217.605742' r='20' stroke='black' stroke-width='2' fill='white' />
+	<text fill='black' font-family='sans-serif' font-size='20' x='153.401420' y='225.605742'
+	text-anchor='middle'>2</text>
+	<line x1='41.597955' y1='181.278050' x2='41.598819' y2='63.720762' stroke='black' stroke-width='2' />
+	<circle cx='41.597955' cy='181.278050' r='20' stroke='black' stroke-width='2' fill='white' />
+	<text fill='black' font-family='sans-serif' font-size='20' x='41.597955' y='189.278050'
+	text-anchor='middle'>3</text>
+	<circle cx='41.598819' cy='63.720762' r='20' stroke='black' stroke-width='2' fill='white' />
+	<text fill='black' font-family='sans-serif' font-size='20' x='41.598819' y='71.720762'
+	text-anchor='middle'>4</text>
+	<circle cx='153.402817' cy='27.394712' r='20' stroke='black' stroke-width='2' fill='white' />
+	<text fill='black' font-family='sans-serif' font-size='20' x='153.402817' y='35.394712'
+	text-anchor='middle'>5</text>
+  </g>
+</svg>

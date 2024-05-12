@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import mx.unam.ciencias.icc.igu.EntradaVerificable?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mx.unam.ciencias.icc.igu.ControladorFormaEditaKgroup"
+            prefWidth="410.0" prefHeight="325.0">
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+  <children>
+    <GridPane prefWidth="410.0" prefHeight="325.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0" >
+      <columnConstraints>
+        <ColumnConstraints prefWidth="160.0" />
+        <ColumnConstraints prefWidth="250.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+      </rowConstraints>
+      <children>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0"
+               text="Nombre:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+               text="Año Debut:" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2"
+               text="Generación:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3"
+                text="Tipo:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4"
+               text="# Miembros:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="5"
+               text="Género Musical:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="6"
+               text="Discográfica:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="7"
+               text="Canción Representativa:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="8"
+                text="Calificación General:"/>
+        <EntradaVerificable fx:id="entradaName"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="0">
+          <tooltip>
+            <Tooltip text="El nombre no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaYear"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="1">
+          <tooltip>
+            <Tooltip text="El año debut debe estar entre 1990 y 2023"/>
+          </tooltip>
+      </EntradaVerificable>
+      <EntradaVerificable fx:id="entradaGeneration"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+          GridPane.rowIndex="2">
+      <tooltip>
+          <Tooltip text="La generación debe estar entre 1 y 4"/>
+      </tooltip>
+      </EntradaVerificable>
+      <EntradaVerificable fx:id="entradaType"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="3">
+          <tooltip>
+            <Tooltip text="El tipo no puede ser vacío"/>
+          </tooltip>
+          </EntradaVerificable>
+          <EntradaVerificable fx:id="entradaMembers"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+          GridPane.rowIndex="4">
+      <tooltip>
+          <Tooltip text="El número de miembros debe estar entre 1 y 30"/>
+      </tooltip>
+      </EntradaVerificable>
+      <EntradaVerificable fx:id="entradaGenre"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="5">
+          <tooltip>
+            <Tooltip text="El género musical no puede ser vacío"/>
+          </tooltip>
+          </EntradaVerificable>
+          <EntradaVerificable fx:id="entradaLabel"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="6">
+          <tooltip>
+            <Tooltip text="La discográfica no puede ser vacía"/>
+          </tooltip>
+          </EntradaVerificable>
+          <EntradaVerificable fx:id="entradaSong"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="7">
+          <tooltip>
+            <Tooltip text="La canción representativa no puede ser vacía"/>
+          </tooltip>
+          </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaReview"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="8">
+          <tooltip>
+            <Tooltip text="La calificación general debe estar entre 0.0 y 5.0"/>
+          </tooltip>
+        </EntradaVerificable>
+      </children>
+    </GridPane>
+    <ButtonBar AnchorPane.bottomAnchor="10.0"
+               AnchorPane.rightAnchor="10.0">
+      <buttons>
+        <Button fx:id="botonAceptar" disable="true"
+                onAction="#aceptar" text="Aceptar"
+                prefWidth="120.0" />
+        <Button onAction="#cancelar" text="Cancelar"
+                prefWidth="120.0" defaultButton="true" />
+      </buttons>
+    </ButtonBar>
+  </children>
+</AnchorPane>

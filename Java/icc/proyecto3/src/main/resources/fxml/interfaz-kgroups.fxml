@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import mx.unam.ciencias.icc.igu.FabricaFormatoCelda?>
+
+<BorderPane prefWidth="800.0" prefHeight="600.0"
+            fx:controller="mx.unam.ciencias.icc.igu.ControladorInterfazKgroups"
+            xmlns:fx="http://javafx.com/fxml">
+  <top>
+    <MenuBar BorderPane.alignment="CENTER">
+      <menus>
+        <Menu  text="Base de Datos">
+          <items>
+            <MenuItem fx:id="menuConexion"
+                      onAction="#cambiaConexion" text="Conectar...">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="N" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <SeparatorMenuItem />
+            <MenuItem  onAction="#salir" text="Salir">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="Q" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu  text="Grupos de kpop">
+          <items>
+            <MenuItem fx:id="menuAgregar"
+                      onAction="#agregaKgroup" text="Agregar...">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="A" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="menuEditar"
+                      onAction="#editaKgroup" text="Editar...">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="E" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="menuEliminar"
+                      onAction="#eliminaKgroups" text="Eliminar">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="L" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="menuBuscar"
+                      onAction="#buscaKgroups" text="Buscar...">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="B" control="DOWN"
+                                    meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu  text="Ayuda">
+          <items>
+            <MenuItem onAction="#acercaDe" text="Acerca de..." />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+  <center>
+    <GridPane alignment="CENTER">
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <TableView fx:id="tabla" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+        <columnResizePolicy>
+          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+        <columns>
+          <TableColumn fx:id="columnaName" text="Nombre">
+            <cellValueFactory>
+              <PropertyValueFactory property="name" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="columnaYear" text="Año debut"
+                       style="-fx-alignment: CENTER;">
+            <cellFactory>
+              <FabricaFormatoCelda formato="\%d" />
+            </cellFactory>
+            <cellValueFactory>
+              <PropertyValueFactory property="year" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaGeneration" text="Generación"
+                       style="-fx-alignment: CENTER;">
+            <cellFactory>
+              <FabricaFormatoCelda formato="\%d" />
+            </cellFactory>
+            <cellValueFactory>
+              <PropertyValueFactory property="generation" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaType" text="Tipo">
+            <cellValueFactory>
+              <PropertyValueFactory property="type" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaMembers" text="# Miembros"
+                       style="-fx-alignment: CENTER;">
+            <cellFactory>
+              <FabricaFormatoCelda formato="\%d" />
+            </cellFactory>
+            <cellValueFactory>
+              <PropertyValueFactory property="members" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaGenre" text="Género musical">
+            <cellValueFactory>
+              <PropertyValueFactory property="genre" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaLabel" text="Discográfica">
+            <cellValueFactory>
+              <PropertyValueFactory property="label" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaLikes" text="Canción representativa">
+            <cellValueFactory>
+              <PropertyValueFactory property="song" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnaReview" text="Calificación general"
+                       style="-fx-alignment: CENTER;">
+            <cellFactory>
+              <FabricaFormatoCelda formato="\%2.2f" />
+            </cellFactory>
+            <cellValueFactory>
+              <PropertyValueFactory property="review" />
+            </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <sortOrder>
+          <fx:reference source="columnaName" />
+        </sortOrder>
+      </TableView>
+    </GridPane>
+  </center>
+  <bottom>
+    <AnchorPane>
+      <children>
+        <ButtonBar AnchorPane.rightAnchor="10.0"
+                   AnchorPane.bottomAnchor="10.0" >
+          <buttons>
+            <Button fx:id="botonAgregar"
+                    onAction="#agregaKgroup" text="Agregar"
+                    prefWidth="120.0" defaultButton="true" />
+            <Button fx:id="botonEditar"
+                    onAction="#editaKgroup" text="Editar"
+                    prefWidth="120.0" />
+            <Button fx:id="botonEliminar"
+                    onAction="#eliminaKgroups" text="Eliminar"
+                    prefWidth="120.0" />
+            <Button fx:id="botonBuscar"
+                    onAction="#buscaKgroups" text="Buscar"
+                    prefWidth="120.0" />
+          </buttons>
+        </ButtonBar>
+      </children>
+    </AnchorPane>
+  </bottom>
+</BorderPane>
